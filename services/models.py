@@ -19,9 +19,8 @@ class Service(SEO):
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, related_name='services',
                                  verbose_name='Специальность')
     name = models.CharField(max_length=250, verbose_name='Название услуги')
-    description = models.TextField(verbose_name='Описание услуги')          # tinymce?
+    description = models.TextField(verbose_name='Описание услуги')
     price = models.PositiveIntegerField(default=0, verbose_name='Цена услуги')
-    # doctors = models.ManyToManyField(Doctor, verbose_name='Доктора', related_name='services')
     created = models.DateField(auto_now_add=True, verbose_name='Дата создания')
     updated = models.DateField(auto_now=True, verbose_name='Дата изменения')
 
