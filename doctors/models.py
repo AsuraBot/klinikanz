@@ -7,10 +7,16 @@ class Doctor(SEO):
     first_name = models.CharField(max_length=50, verbose_name='Имя')
     last_name = models.CharField(max_length=50, verbose_name='Фамилия')
     patronymic = models.CharField(max_length=50, verbose_name='Отчество')
-    # photo =
     about = models.TextField(verbose_name='Информация')
     services = models.ManyToManyField(Service, verbose_name='Услуги', related_name='doctors')
     specialty = models.CharField(max_length=250, verbose_name='Специальность')
+
+    def get_picture_url(self, filename):
+        ext = filename.split('.')[-1]
+        filename = '%s.%s' % (self.id, ext)
+        return 'images/doctors/%s' % filename
+
+    image = models.ImageField(verbose_name='Фото', upload_to=get_picture_url, blank=True, null=True)
 
     class Meta:
         verbose_name = 'Доктор'

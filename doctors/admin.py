@@ -10,7 +10,7 @@ class DoctorAdmin(admin.ModelAdmin):
     filter_horizontal = ('services',)
     fieldsets = (
         (None, {
-            'fields': ('last_name', 'first_name', 'patronymic', 'about', 'specialty', 'services')
+            'fields': ('last_name', 'first_name', 'patronymic', 'about', 'specialty', 'services', 'image')
         }),
         ('SEO', {
             'fields': ('slug', 'seo_desc', 'seo_keywords'),
