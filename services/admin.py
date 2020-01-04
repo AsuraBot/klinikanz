@@ -9,7 +9,7 @@ class ServiceAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     fieldsets = (
         (None, {
-            'fields': ('name', 'description', 'price')
+            'fields': ('name', 'description', 'price', 'image')
         }),
         ('SEO', {
             'fields': ('slug', 'seo_desc', 'seo_keywords'),

@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'core',
     'doctors',
     'reviews',
+    'froala_editor',
 ]
 
 MIDDLEWARE = [
@@ -46,7 +47,9 @@ ROOT_URLCONF = 'klinikanz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,3 +118,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+FROALA_UPLOAD_PATH = 'uploads/'
+
+FROALA_EDITOR_OPTIONS = {
+    'height': 500,
+}
